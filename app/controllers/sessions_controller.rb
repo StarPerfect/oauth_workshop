@@ -37,6 +37,7 @@ class SessionsController < ApplicationController
   #   end
 
   def create
+    # token = GithubApiService.new.get_data this is what Brian did in class that worked - try it:
     github_service = GithubApiService.new
     oauth = github_service.oauth
     user = User.find_or_create_by(uid: oauth["id"])
